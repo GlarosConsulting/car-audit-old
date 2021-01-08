@@ -2,14 +2,10 @@ import React from 'react';
 
 import Home from './pages/Home';
 
-declare const global: {HermesInternal: null | {}};
-
-const App = () => {
-  return (
-    <>
+const App = () => (
+  <>
     <Home />
-    </>
-  );
-};
+  </>
+);
 
 export default App;
