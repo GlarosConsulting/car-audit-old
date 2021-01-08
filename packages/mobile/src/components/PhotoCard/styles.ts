@@ -1,3 +1,4 @@
+import { transparentize } from 'polished';
 import styled, { css } from 'styled-components/native';
 
 interface IContainerProps {
@@ -5,7 +6,7 @@ interface IContainerProps {
   height: string | number;
 }
 
-export const Container = styled.TouchableOpacity<IContainerProps>`
+export const Container = styled.View<IContainerProps>`
   position: relative;
 
   background: #eee;
@@ -19,7 +20,10 @@ export const Container = styled.TouchableOpacity<IContainerProps>`
   `};
 `;
 
-export const Photo = styled.View``;
+export const Photo = styled.Image`
+  width: 100%;
+  height: 100%;
+`;
 
 export const TitleContainer = styled.View`
   position: absolute;
@@ -28,7 +32,7 @@ export const TitleContainer = styled.View`
   width: 100%;
   height: 32px;
 
-  background: #ddd;
+  background: ${transparentize(0.3, '#ddd')};
 
   justify-content: center;
   align-items: center;

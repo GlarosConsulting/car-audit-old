@@ -10,7 +10,7 @@ const Home: React.FC = () => {
     const screenWidth = Dimensions.get('screen').width;
 
     const width = `${screenWidth * 0.44}px`;
-    const height = `${screenWidth * 0.5}px`;
+    const height = `${screenWidth * 0.36}px`;
 
     return {
       width,
@@ -24,18 +24,23 @@ const Home: React.FC = () => {
 
       <Container>
         <Row>
-          <PhotoCard {...photoCardProps} />
-          <PhotoCard {...photoCardProps} />
+          <PhotoCard title="Dianteira" {...photoCardProps} />
+          <PhotoCard title="Traseira" {...photoCardProps} />
         </Row>
 
         <Row>
-          <PhotoCard {...photoCardProps} />
-          <PhotoCard {...photoCardProps} />
+          <PhotoCard title="Lateral direita" {...photoCardProps} />
+          <PhotoCard title="Lateral esquerda" {...photoCardProps} />
         </Row>
 
         <Row>
-          <PhotoCard {...photoCardProps} />
-          <PhotoCard {...photoCardProps} />
+          <PhotoCard title="Motor" {...photoCardProps} />
+          <PhotoCard title="Chassi" {...photoCardProps} />
+        </Row>
+
+        <Row>
+          <PhotoCard title="Documento" {...photoCardProps} />
+          <PhotoCard title="Painel" {...photoCardProps} />
         </Row>
       </Container>
     </>
