@@ -6,6 +6,7 @@ import Inspection from '@modules/inspections/infra/typeorm/entities/Inspection';
 import IInspectionsRepository from '@modules/inspections/repositories/IInspectionsRepository';
 
 interface IRequest {
+  user_id: string;
   filenames: {
     forward: string;
     croup: string;
@@ -28,7 +29,7 @@ class CreateInspectionService {
     private storageProvider: IStorageProvider,
   ) {}
 
-  public async execute({ filenames }: IRequest): Promise<Inspection> {
+  public async execute({ user_id, filenames }: IRequest): Promise<Inspection> {
     const [
       forwardFilename,
       croupFilename,
@@ -50,6 +51,7 @@ class CreateInspectionService {
     ]);
 
     const inspection = await this.inspectionsRepository.create({
+      user_id,
       forward_img: forwardFilename,
       croup_img: croupFilename,
       left_side_img: leftSideFilename,

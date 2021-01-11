@@ -15,6 +15,9 @@ export default class Inspection {
   id: string;
 
   @Column()
+  user_id: string;
+
+  @Column()
   @Exclude()
   forward_img: string;
 
