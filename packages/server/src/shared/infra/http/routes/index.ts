@@ -1,6 +1,7 @@
 import { Router } from 'express';
 
-import inspectionsRouter from '@modules/inspections/infra/http/routes/inspections.routes';
+import customersIxcRouter from '@modules/customers_ixc/infra/http/routes/customers_ixc.routes';
+import logsRouter from '@modules/logs/infra/http/routes/logs.routes';
 import passwordRouter from '@modules/users/infra/http/routes/password.routes';
 import profileRouter from '@modules/users/infra/http/routes/profile.routes';
 import sessionsRouter from '@modules/users/infra/http/routes/sessions.routes';
@@ -12,11 +13,12 @@ routes.use('/sessions', sessionsRouter);
 routes.use('/password', passwordRouter);
 routes.use('/users', usersRouter);
 routes.use('/profile', profileRouter);
-routes.use('/inspections', inspectionsRouter);
+routes.use('/customers-ixc', customersIxcRouter);
+routes.use('/logs', logsRouter);
 
 routes.get('/', (_request, response) =>
   response.json({
-    name: 'Brasil Car API',
+    name: 'RealData API',
     version: '1.0.0',
   }),
 );
