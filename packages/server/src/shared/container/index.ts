@@ -4,6 +4,8 @@ import '@modules/users/providers';
 
 import './providers';
 
+import InspectionsRepository from '@modules/inspections/infra/typeorm/repositories/InspectionsRepository';
+import IInspectionsRepository from '@modules/inspections/repositories/IInspectionsRepository';
 import UsersRepository from '@modules/users/infra/typeorm/repositories/UsersRepository';
 import UserTokensRepository from '@modules/users/infra/typeorm/repositories/UserTokensRepository';
 import IUsersRepository from '@modules/users/repositories/IUsersRepository';
@@ -17,4 +19,9 @@ container.registerSingleton<IUsersRepository>(
 container.registerSingleton<IUserTokensRepository>(
   'UserTokensRepository',
   UserTokensRepository,
+);
+
+container.registerSingleton<IInspectionsRepository>(
+  'InspectionsRepository',
+  InspectionsRepository,
 );

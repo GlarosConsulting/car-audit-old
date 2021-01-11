@@ -21,6 +21,7 @@ describe('CreateInspection', () => {
 
   it('should be able to create a new inspection', async () => {
     const inspection = await createInspection.execute({
+      user_id: '123456',
       filenames: {
         forward: '',
         croup: '',
