@@ -4,8 +4,10 @@ import '@modules/users/providers';
 
 import './providers';
 
-import InspectionsRepository from '@modules/inspections/infra/typeorm/repositories/InspectionsRepository';
-import IInspectionsRepository from '@modules/inspections/repositories/IInspectionsRepository';
+import CustomersIXCRepository from '@modules/customers_ixc/infra/typeorm/repositories/CustomerIXCRepository';
+import ICustomersIXCRepository from '@modules/customers_ixc/repositories/ICustomersIXCRepository';
+import LogsRepository from '@modules/logs/infra/typeorm/repositories/LogsRepository';
+import ILogsRepository from '@modules/logs/repositories/ILogsRepository';
 import UsersRepository from '@modules/users/infra/typeorm/repositories/UsersRepository';
 import UserTokensRepository from '@modules/users/infra/typeorm/repositories/UserTokensRepository';
 import IUsersRepository from '@modules/users/repositories/IUsersRepository';
@@ -21,7 +23,9 @@ container.registerSingleton<IUserTokensRepository>(
   UserTokensRepository,
 );
 
-container.registerSingleton<IInspectionsRepository>(
-  'InspectionsRepository',
-  InspectionsRepository,
+container.registerSingleton<ILogsRepository>('LogsRepository', LogsRepository);
+
+container.registerSingleton<ICustomersIXCRepository>(
+  'CustomersIXCRepository',
+  CustomersIXCRepository,
 );

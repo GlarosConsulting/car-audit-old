@@ -28,11 +28,12 @@
   "scripts": {
     "heroku-postbuild": "yarn audit:server build",
     "build": "lerna run build --scope @car-audit/* --stream",
-    "build:robot": "lerna run build --scope @car-audit/* --stream",
+    "build:robot": "lerna run build --scope @car-audit/robot-* --stream",
     "lint:fix": "eslint --fix packages --ext ts,tsx",
-    "test": "lerna run test --scope @car-audit/* --stream --parallel -- --watchAll false",
+    "test": "lerna run test --scope @car-audit/audit-* --stream --parallel -- --watchAll false",
     "server": "yarn workspace @car-audit/server",
-    "mobile": "yarn workspace @car-audit/mobile"
+    "mobile": "yarn workspace @car-audit/mobile",
+    "web": "yarn workspace @car-audit/web"
   },
   "lint-staged": {
     "packages/**/*.{ts,tsx}": [
